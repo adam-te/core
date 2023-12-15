@@ -76,7 +76,8 @@ export function legacyRenderSlot(
   if (bindObject) {
     props = mergeProps(props, bindObject)
   }
-  return renderSlot(instance.slots, name, props, fallback && (() => fallback))
+  // @ts-expect-error
+  return renderSlot(instance.slots, name, props, fallback)
 }
 
 type LegacyScopedSlotsData = Array<
